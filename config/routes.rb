@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :heroes
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api, defaults: { format: :json } do # namespace faz o model mostrar apenas a informação de id e name, sem o timestamp
+    resources :heroes
+  end
 end
